@@ -21,3 +21,19 @@ public:
         return count;
     }
 };
+
+//Time Complexity: O(log N)
+//Space Complexity: O(1)
+
+class Solution {
+public:
+    int hammingWeight(int n) {
+        int rem = 0, count = 0;
+        while(n != 0) {
+            rem = n % 2;
+            count += rem;
+            n /= 2;
+        }
+        return count;
+    }
+};
