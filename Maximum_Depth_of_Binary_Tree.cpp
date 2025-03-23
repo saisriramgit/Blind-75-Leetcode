@@ -1,5 +1,5 @@
 //Time Complexity: O(N)
-//Space Complexity: O(N)
+//Space Complexity: O(H) - H -> Height of Binary tree
 
 class Solution {
 public:

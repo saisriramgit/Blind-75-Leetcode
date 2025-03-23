@@ -22,3 +22,22 @@ public:
         return maxLen;
     }
 };
+
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int l = 0, r = 0, n = s.length();
+        int maxLen = 0;
+        vector<int> arr(128, 0);
+        for(int r = 0 ; r < n; r++) {
+            int curr = s[r];
+            while(arr[curr] > 0) {
+                arr[s[l]]--;
+                l++;
+            }
+            arr[curr]++;
+            maxLen = max(maxLen, r - l + 1);
+        }
+        return maxLen;
+    }
+};

@@ -21,3 +21,21 @@ public:
         return max_len;
     }
 };
+
+class Solution {
+public:
+    int characterReplacement(string s, int k) {
+        int maxFreq = 0, result = 0, j = 0;
+        unordered_map<char, int> mp;
+        for(int i = 0; i < s.length(); i++) {
+            mp[s[i]]++;
+            maxFreq = max(maxFreq, mp[s[i]]);
+            while((i - j + 1) - maxFreq > k) {
+                mp[s[j]]--;
+                j++;
+            }
+            result = max(result, i - j + 1);
+        }
+        return result;
+    }
+};

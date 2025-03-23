@@ -7,7 +7,7 @@ public:
         unordered_set<int> numSet(nums.begin(), nums.end());
         int longStreak = 0;
 
-        for(int num : nums) {
+        for(int num : numSet) {
             if(numSet.find(num - 1) == numSet.end()) {
                 int currNum = num;
                 int currStreak = 1;
